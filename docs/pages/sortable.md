@@ -231,3 +231,12 @@ The following events will be triggered on elements with this component attached:
 | `moved`   | Fires after an element has been moved.   |
 | `added`   | Fires after an element has been added.   |
 | `removed` | Fires after an element has been removed. |
+
+```js
+var util = UIkit.util;
+util.ready(function () {
+    util.on(document.body, 'start moved added removed stop', function (e, sortable, el) {
+        console.log(e.type, sortable, el);
+    });
+});
+```
